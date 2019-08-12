@@ -71,6 +71,7 @@ rv.setAdapter(adapter);
 </br>
 
 3.多item类型列表
+
 初始化适配器 new SuperAdapter(multiItemBuilder)，并设置数据源 adapter.setData。
 
 MultiItemBuilder 中：
@@ -185,7 +186,9 @@ adapter.addSortHead(sortHeadBuilder, SORT_SIZE);
 
 </br>
 
-8.分页加载数据：参见代码PageLoad。
+8.分页加载数据：
+
+参见代码PageLoad。
 
 </br>
 
