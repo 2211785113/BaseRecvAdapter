@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.ruru">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.SingleItem" />
+        <activity android:name=".activity.MultiItem" />
+        <activity android:name=".activity.HeadItem" />
+        <activity android:name=".activity.FootItem" />
+        <activity android:name=".activity.SortHead" />
+        <activity android:name=".activity.ClickOne" />
+        <activity android:name=".activity.ClickTwo" />
+        <activity android:name=".activity.PageLoad" />
+        <activity android:name=".activity.HeadAndFootItem" />
+        <activity android:name=".activity.MultiPageLoad" />
+        <activity android:name=".activity.EmptyItem" />
+    </application>
+
+</manifest>

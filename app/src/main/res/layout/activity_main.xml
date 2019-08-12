@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/btn_padding">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:background="@color/gray"
+            android:onClick="single"
+            android:text="单种Item type"
+            android:textSize="@dimen/btn_text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:background="@color/gray"
+            android:onClick="multi"
+            android:text="多种Item type"
+            android:textSize="@dimen/btn_text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:background="@color/gray"
+            android:onClick="head"
+
+            android:text="添加头部Item"
+            android:textSize="@dimen/btn_text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:background="@color/gray"
+            android:onClick="foot"
+
+            android:text="添加底部Item"
+            android:textSize="@dimen/btn_text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:background="@color/gray"
+            android:onClick="headAndFoot"
+            android:text="添加头部和底部Item"
+            android:textSize="@dimen/btn_text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:background="@color/gray"
+            android:onClick="emptyItem"
+            android:text="添加空Item"
+            android:textSize="@dimen/btn_text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:background="@color/gray"
+            android:onClick="sorthead"
+            android:text="添加分类头部Item"
+            android:textSize="@dimen/btn_text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:background="@color/gray"
+            android:onClick="clickItemOne"
+            android:text="点击事件一"
+            android:textSize="@dimen/btn_text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:background="@color/gray"
+            android:onClick="clickItemTwo"
+            android:text="点击事件二"
+            android:textSize="@dimen/btn_text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:background="@color/gray"
+            android:onClick="pageLoad"
+            android:text="分页加载"
+            android:textSize="@dimen/btn_text_size" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginTop="@dimen/btn_padding"
+            android:background="@color/gray"
+            android:onClick="multiPageLoad"
+            android:text="多个分页加载切换"
+            android:textSize="@dimen/btn_text_size" />
+    </LinearLayout>
+
+</ScrollView>

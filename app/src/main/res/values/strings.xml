@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="tab_left">A1界面</string>
+    <string name="tab_right">A2界面</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
