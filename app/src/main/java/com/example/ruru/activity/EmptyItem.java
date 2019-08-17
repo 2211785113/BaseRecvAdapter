@@ -36,7 +36,7 @@ public class EmptyItem extends AppCompatActivity {
 
             @Override
             public void bindEmptyData(BaseViewHolder holder, int position) {
-                holder.setText(R.id.tv, "没有更多内容");
+                holder.setText(R.id.tv, "没有数据了");
             }
         };
 

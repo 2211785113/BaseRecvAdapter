@@ -18,6 +18,7 @@ import static com.example.ruru.constant.ServeConstant.PAGE_SIZE;
 import static com.example.ruru.constant.ServeConstant.TYPE_A;
 
 /**
+ * 滚动分页加载
  * A simple {@link Fragment} subclass.
  */
 public class AFragment extends Fragment {

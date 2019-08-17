@@ -25,7 +25,7 @@ public abstract class BaseAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     /**
      * 分页加载开始的页数
      */
-    protected int startPage;
+    protected int loadPage;
 
     /**
      * 分类item的数量：即每sortCount个普通item上加一个sortHeadItem
@@ -89,6 +89,21 @@ public abstract class BaseAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     protected static final int TYPE_SORT_HEAD = 1004;
 
     /**
+     * 分页加载数据：正在加载
+     */
+    protected static final int LOADING = 2001;
+
+    /**
+     * 分页加载数据：加载失败
+     */
+    protected static final int LOADING_FAILURE = 2002;
+
+    /**
+     * 分页加载数据：没有数据
+     */
+    protected static final int LOADING_NOMORE = 2003;
+
+    /**
      * 判断是否是多级列表
      *
      * @return
@@ -142,5 +157,12 @@ public abstract class BaseAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         return sortHeadBuilder != null;
     }
 
-
+    /**
+     * 分页加载底部未加载异常
+     */
+    public static class FootBuilderNotLoadedException extends RuntimeException {
+        public FootBuilderNotLoadedException() {
+            super("The FootBuilder is not loaded");
+        }
+    }
 }

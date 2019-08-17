@@ -3,22 +3,22 @@
     android:id="@+id/item_foot_loading"
     android:layout_width="match_parent"
     android:layout_height="@dimen/head_height"
+    android:gravity="center"
+    android:background="@color/headGray"
     android:orientation="vertical">
 
     <ProgressBar
         android:id="@+id/progressbar"
         android:layout_width="@dimen/refresh_height"
         android:layout_height="@dimen/refresh_height"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/btn_padding" />
+        android:visibility="gone" />
 
     <TextView
-        android:id="@+id/tv_loading"
+        android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/btn_padding"
         android:text="isloading..."
-        android:textSize="@dimen/item_text_size" />
+        android:textSize="@dimen/item_text_size"
+        android:visibility="gone" />
 
 </LinearLayout>

@@ -3,7 +3,7 @@ package com.example.ruru.library.listener;
 import java.util.List;
 
 /**
- * 加载数据监听器
+ * 加载数据状态监听器
  */
 public interface LoadDataStatus<T> {
 

@@ -56,7 +56,7 @@ public class DataModel {
                 }
                 break;
             case 2:
-                for (int i = pageSize; i < pageSize * 2; i++) {
+                for (int i = pageSize; i < pageSize * 2 - 5; i++) { //这里-5是为了模拟数据
                     list.add(i + "");
                 }
                 break;

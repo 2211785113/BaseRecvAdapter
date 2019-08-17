@@ -20,7 +20,12 @@ import com.example.ruru.library.viewholder.BaseViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @param <T>
+ */
 public abstract class BaseRecvAdapter<T> extends BaseAdapter {
+
+    private final String TAG = "BaseRecvAdapter";
 
     //list数据集合
     private List<T> list = new ArrayList<T>();
@@ -36,6 +41,11 @@ public abstract class BaseRecvAdapter<T> extends BaseAdapter {
 
     //长按事件
     private OnLongClickListener onLongClickListener;
+
+    //分页加载上锁
+//    private boolean mLoadingLock = true;
+
+    private int status = LOADING;
 
     /**
      * @param layoutId 普通item布局
@@ -61,6 +71,7 @@ public abstract class BaseRecvAdapter<T> extends BaseAdapter {
             return getSortCount();
         }
 
+//        Log.d(TAG, "getItemCount:count= " + getCount());
         return getCount();
     }
 
@@ -148,32 +159,49 @@ public abstract class BaseRecvAdapter<T> extends BaseAdapter {
      */
     @Override
     public void onBindViewHolder(@NonNull final BaseViewHolder holder, int pos) {
-
         //头部view
         if (isHeadView() && pos == 0) {
+            Log.d(TAG, "header");
             headBuilder.bindHeadView(holder);
             //这里要加return：如果不加会继续执行bindData绑定数据，onCreateViewHolder负责存放View，这里负责绑定数据。
             return;
         }
 
+        //分页加载view，联动改变footBuilder的状态。
+        if (isLoadingView() && isSortHeadView() && pos == getSortCount() - 1) {
+            pageLoading(holder);
+            return;
+        }
+
+        Log.d(TAG, "pos==" + pos + " getcount-1=" + (getCount() - 1));
+
+        if (isLoadingView() && !isSortHeadView() && pos == getCount() - 1) {
+            pageLoading(holder);
+            return;
+        }
+
         //底部view
         if (isFootView() && isSortHeadView() && pos == getSortCount() - 1) {
+            Log.d(TAG, "footer");
             footBuilder.onNormal(holder);
             return;
         }
 
         if (isFootView() && !isSortHeadView() && pos == getCount() - 1) {
+            Log.d(TAG, "footer");
             footBuilder.onNormal(holder);
             return;
         }
 
         //空view
         if (isEmptyView() && isSortHeadView() && pos == getSortCount() - 1) {
+            Log.d(TAG, "empty");
             emptyBuilder.bindEmptyData(holder, pos);
             return;
         }
 
         if (isEmptyView() && !isSortHeadView() && pos == getCount() - 1) {
+            Log.d(TAG, "empty");
             emptyBuilder.bindEmptyData(holder, pos);
             return;
         }
@@ -183,6 +211,7 @@ public abstract class BaseRecvAdapter<T> extends BaseAdapter {
             pos = pos - 1;
 
         if (isSortHeadView() && pos % (sortCount + 1) == 0) {
+            Log.d(TAG, "sorthead");
             sortHeadBuilder.bindSortHeadData(holder, pos);
             return;
         }
@@ -192,6 +221,7 @@ public abstract class BaseRecvAdapter<T> extends BaseAdapter {
         }
 
         //普通item绑定数据
+        Log.d(TAG, "binddata：list.get(pos)=" + list.get(pos));
         bindData(holder, list.get(pos));
 
         holder.getView().setTag(pos);
@@ -220,6 +250,63 @@ public abstract class BaseRecvAdapter<T> extends BaseAdapter {
         });
     }
 
+    private void pageLoading(BaseViewHolder holder) {
+        //监听事件回调正在加载数据
+        Log.d(TAG, "load data footer");
+        if (status == LOADING) {
+//                if (!mLoadingLock) {
+//                    footBuilder.onLoading(holder);
+//                } else {
+//                    mLoadingLock = false;
+            footBuilder.onLoading(holder);
+            loadDataListener.loadingData(loadPage + 1, loadDataStatus);
+//                }
+        }
+
+        if (status == LOADING_FAILURE) {
+            footBuilder.onLoadingFailure(holder);
+            //加载状态改成正在加载，下次即可重新加载
+            status = LOADING;
+            //点击footer重新加载
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    notifyDataSetChanged();
+                }
+            });
+        }
+
+        if (status == LOADING_NOMORE) {
+            footBuilder.onNoMoreData(holder);
+        }
+    }
+
+    LoadDataStatus loadDataStatus = new LoadDataStatus() {
+        @Override
+        public void onSuccess(List list) {
+            Log.d(TAG, "onSuccess:list= " + list);
+            addData(list);
+            loadPage++;
+//            mLoadingLock = true;
+        }
+
+        @Override
+        public void onFailure(String msg) {
+            onLoadingStatusChanged(LOADING_FAILURE);
+        }
+
+        @Override
+        public void onNoMoreData() {
+            onLoadingStatusChanged(LOADING_NOMORE);
+        }
+    };
+
+    private void onLoadingStatusChanged(int status) {
+        this.status = status;
+//        mLoadingLock = true;
+        notifyDataSetChanged();
+    }
+
     /**
      * @param viewHolder
      * @param t          绑定数据，由子类来实现
@@ -238,16 +325,35 @@ public abstract class BaseRecvAdapter<T> extends BaseAdapter {
      * 清空数据
      */
     public void clearData() {
-        list.clear();
+        this.list.clear();
+        notifyDataSetChanged();
+    }
+
+    public void addData(List<T> list) {
+        this.list.addAll(list);
         notifyDataSetChanged();
     }
 
     /**
-     * 分页加载数据
+     * 分页加载数据(无刷新提示)
      */
     public void setPaginationData(List<T> list) {
         this.list.addAll(list);
         notifyDataSetChanged();
+    }
+
+    /**
+     * 分页加载数据(有刷新提示)
+     *
+     * @param loadPage
+     * @param loadDataListener
+     */
+    public void setPaginationData(int loadPage, LoadDataListener loadDataListener) {
+        if (this.footBuilder == null) {
+            throw new FootBuilderNotLoadedException();
+        }
+        this.loadPage = loadPage;
+        this.loadDataListener = loadDataListener;
     }
 
     /**

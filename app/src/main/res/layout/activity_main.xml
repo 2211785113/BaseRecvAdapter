@@ -97,7 +97,7 @@
             android:layout_marginTop="@dimen/btn_padding"
             android:background="@color/gray"
             android:onClick="pageLoad"
-            android:text="分页加载"
+            android:text="分页自动加载数据"
             android:textSize="@dimen/btn_text_size" />
 
         <Button
@@ -106,7 +106,7 @@
             android:layout_marginTop="@dimen/btn_padding"
             android:background="@color/gray"
             android:onClick="multiPageLoad"
-            android:text="多个分页加载切换"
+            android:text="多个滚动分页加载切换"
             android:textSize="@dimen/btn_text_size" />
     </LinearLayout>
 

@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/btn_padding">
+    android:layout_height="@dimen/btn_height"
+    android:gravity="center"
+    android:padding="@dimen/btn_padding"
+    android:text="你好"
+    android:textSize="@dimen/item_text_size" />
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="你好"
-        android:textSize="@dimen/item_text_size" />
-
-</LinearLayout>
