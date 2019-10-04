@@ -35,12 +35,12 @@ public abstract class BaseAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     /**
      * 多种类型type支持类
      */
-    protected MultiItemBuilder multiItemBuilder;
+    protected static MultiItemBuilder multiItemBuilder;
 
     /**
      * 头部布局支持类：只能添加一个
      */
-    protected HeadBuilder headBuilder;
+    protected static HeadBuilder headBuilder;
 
     /**
      * 底部布局支持类：只能添加一个

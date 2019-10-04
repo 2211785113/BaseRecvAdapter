@@ -419,7 +419,7 @@ public abstract class BaseRecvAdapter<T> extends BaseAdapter {
     /**
      * 测试建造者模式
      */
-   /* public static class Builder {
+    /*public static class Builder {
 
         private int layoutId;
         private HeadBuilder headBuilder;
@@ -438,6 +438,15 @@ public abstract class BaseRecvAdapter<T> extends BaseAdapter {
             this.multiItemBuilder = multiItemBuilder;
             return this;
         }
+
+        public Builder build() {
+            return this;
+        }
+    }
+
+    public static void init(Builder builder) {
+        multiItemBuilder = builder.multiItemBuilder;
+        headBuilder = builder.headBuilder;
     }*/
 }
 
