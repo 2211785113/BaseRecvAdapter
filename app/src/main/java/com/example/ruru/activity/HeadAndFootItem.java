@@ -60,6 +60,18 @@ public class HeadAndFootItem extends AppCompatActivity {
             }
         };
 
+        //测试建造者模式
+        /*BaseRecvAdapter.Builder builder = new BaseRecvAdapter.Builder(R.layout.item).setHeadBuilder(headBuilder);
+
+        BaseRecvAdapter<String> adapter1 = new BaseRecvAdapter<String>(R.layout.item) {
+            @Override
+            public void bindData(BaseViewHolder viewHolder, String s) {
+
+            }
+        };*/
+
+
+
         adapter.addHead(headBuilder);
         adapter.addFoot(footBuilder);
 

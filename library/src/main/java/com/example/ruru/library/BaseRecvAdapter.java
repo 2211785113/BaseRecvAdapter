@@ -415,5 +415,29 @@ public abstract class BaseRecvAdapter<T> extends BaseAdapter {
     private int getCount() {
         return list.size() + count;
     }
+
+    /**
+     * 测试建造者模式
+     */
+   /* public static class Builder {
+
+        private int layoutId;
+        private HeadBuilder headBuilder;
+        private MultiItemBuilder multiItemBuilder;
+
+        public Builder(int layoutId) {
+            this.layoutId = layoutId;
+        }
+
+        public Builder setHeadBuilder(HeadBuilder headBuilder) {
+            this.headBuilder = headBuilder;
+            return this;
+        }
+
+        public Builder setMultiItemBuilder(MultiItemBuilder multiItemBuilder) {
+            this.multiItemBuilder = multiItemBuilder;
+            return this;
+        }
+    }*/
 }
 
