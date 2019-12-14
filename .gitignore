@@ -1,6 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
+*.iml
 .gradle
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
 .idea
-build
-library/library.iml
-app/app.iml
+app/release/
