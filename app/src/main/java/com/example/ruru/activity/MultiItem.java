@@ -8,8 +8,6 @@ import android.widget.TextView;
 
 import com.example.ruru.R;
 import com.example.ruru.data.DataModel;
-import com.example.ruru.library.BaseRecvAdapter;
-import com.example.ruru.library.builder.MultiItemBuilder;
 import com.example.ruru.library.viewholder.BaseViewHolder;
 
 import java.util.List;

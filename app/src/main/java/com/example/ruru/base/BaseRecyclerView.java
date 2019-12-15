@@ -8,10 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 
 import com.example.ruru.data.DataModel;
-import com.example.ruru.library.BaseRecvAdapter;
-
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 import static com.example.ruru.constant.ServeConstant.PAGE_SIZE;
 import static com.example.ruru.constant.ServeConstant.TYPE_A;

@@ -3,7 +3,6 @@ package com.example.ruru.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,6 @@ import android.view.ViewGroup;
 import com.example.ruru.R;
 import com.example.ruru.base.BaseRecyclerView;
 import com.example.ruru.data.DataModel;
-import com.example.ruru.library.BaseRecvAdapter;
 import com.example.ruru.library.viewholder.BaseViewHolder;
 
 import static com.example.ruru.constant.ServeConstant.PAGE_SIZE;

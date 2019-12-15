@@ -7,10 +7,6 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.ruru.R;
 import com.example.ruru.data.DataModel;
-import com.example.ruru.library.BaseRecvAdapter;
-import com.example.ruru.library.builder.FootBuilder;
-import com.example.ruru.library.builder.HeadBuilder;
-import com.example.ruru.library.builder.SimpleFootBuilder;
 import com.example.ruru.library.viewholder.BaseViewHolder;
 
 public class HeadAndFootItem extends AppCompatActivity {

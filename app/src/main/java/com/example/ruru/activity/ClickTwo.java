@@ -8,8 +8,6 @@ import android.widget.Toast;
 
 import com.example.ruru.R;
 import com.example.ruru.data.DataModel;
-import com.example.ruru.library.BaseRecvAdapter;
-import com.example.ruru.library.click.OnRecyclerItemClickListener;
 import com.example.ruru.library.viewholder.BaseViewHolder;
 
 /**

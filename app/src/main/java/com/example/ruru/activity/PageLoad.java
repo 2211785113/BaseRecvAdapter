@@ -11,20 +11,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.ruru.R;
-import com.example.ruru.base.BaseRecyclerView;
 import com.example.ruru.data.DataModel;
-import com.example.ruru.library.BaseRecvAdapter;
-import com.example.ruru.library.builder.FootBuilder;
-import com.example.ruru.library.builder.HeadBuilder;
 import com.example.ruru.library.listener.LoadDataListener;
-import com.example.ruru.library.builder.SimpleFootBuilder;
 import com.example.ruru.library.listener.LoadDataStatus;
 import com.example.ruru.library.viewholder.BaseViewHolder;
 
 import java.util.List;
 
 import static com.example.ruru.constant.ServeConstant.PAGE_SIZE;
-import static com.example.ruru.constant.ServeConstant.TYPE_A;
 
 /**
  * 分页自动加载数据

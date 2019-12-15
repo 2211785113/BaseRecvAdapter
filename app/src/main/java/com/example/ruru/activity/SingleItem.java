@@ -3,19 +3,13 @@ package com.example.ruru.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.TextView;
 
 import com.example.ruru.R;
 import com.example.ruru.data.DataModel;
-import com.example.ruru.library.BaseRecvAdapter;
 import com.example.ruru.library.viewholder.BaseViewHolder;
-
-import java.util.List;
 
 /**
  * Created by SophieRu on 2019/3/29

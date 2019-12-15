@@ -4,12 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.example.ruru.R;
 import com.example.ruru.data.DataModel;
-import com.example.ruru.library.BaseRecvAdapter;
-import com.example.ruru.library.builder.EmptyBuilder;
 import com.example.ruru.library.viewholder.BaseViewHolder;
 
 public class EmptyItem extends AppCompatActivity {
